@@ -47,26 +47,7 @@ const form = document.querySelector("form");
 const factsList = document.querySelector(".facts-list");
 
 factsList.innerHTML = "";
-//createFactsList(initialFacts);
-
-loadFacts();
-async function loadFacts() {
-  const res = await fetch(
-    "https://eztqsxezrjmezjfgqbdd.supabase.co/rest/v1/facts",
-    {
-      headers: {
-        apikey:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV6dHFzeGV6cmptZXpqZmdxYmRkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDYwMTA5OTUsImV4cCI6MjAyMTU4Njk5NX0.4cY8u71pqjGTfOh4udn-IBruql1gD3U3dIZrJx_3YJ8",
-        authorization:
-          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV6dHFzeGV6cmptZXpqZmdxYmRkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDYwMTA5OTUsImV4cCI6MjAyMTU4Njk5NX0.4cY8u71pqjGTfOh4udn-IBruql1gD3U3dIZrJx_3YJ8",
-      },
-    }
-  );
-  const data = await res.json();
-  //   const filteredData = data.filter((fact) => fact.category === "history");
-  //   console.log(filteredData);
-  createFactsList(data);
-}
+createFactsList(initialFacts);
 
 //factsList.insertAdjacentHTML("afterbegin", <li>jjj</li>);
 function createFactsList(dataArray) {
